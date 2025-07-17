@@ -1,0 +1,131 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+# Toolchain: GNU Tools for STM32 (13.3.rel1)
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+O_SRCS += \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_000.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_001.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_002.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_003.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_004.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_005.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_006.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_007.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_008.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_009.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_010.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_011.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_012.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_013.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_014.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_015.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_016.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_017.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_018.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_019.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_020.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_021.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_022.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_023.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_024.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_025.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_026.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_027.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_028.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_029.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_030.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_031.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_032.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_033.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_034.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_035.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_036.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_037.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_038.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_039.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_040.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_041.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_042.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_043.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_044.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_045.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_046.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_047.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_048.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_049.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_050.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_051.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_052.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_053.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_054.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_055.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_056.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_057.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_058.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_059.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_060.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_061.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_062.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_063.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_064.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_065.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_066.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_067.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_068.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_069.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_070.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_071.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_072.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_073.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_074.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_075.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_076.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_077.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_078.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_079.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_080.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_081.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_082.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_083.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_084.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_085.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_086.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_087.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_088.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_089.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_090.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_091.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_092.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_093.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_094.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_095.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_096.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_097.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_098.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_099.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_100.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_101.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_102.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_103.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_104.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_105.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_106.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_107.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_108.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_109.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_110.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_111.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_112.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_113.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_114.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_115.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_116.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_117.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_118.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/HeatingUp/WaterAnimation/image_heating_up_119.o 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+

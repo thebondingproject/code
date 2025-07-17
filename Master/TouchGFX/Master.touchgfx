@@ -1,0 +1,913 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "Startup",
+        "Components": [],
+        "Interactions": []
+      },
+      {
+        "Name": "Main",
+        "CanvasBufferSize": 12000,
+        "Components": [
+          {
+            "Type": "Container",
+            "Name": "camera",
+            "Width": 800,
+            "Height": 480,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "Camera",
+                "X": 160,
+                "Width": 640,
+                "Height": 480,
+                "Color": {
+                  "Red": 237,
+                  "Green": 237,
+                  "Blue": 237
+                }
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "backgrounds_and_lines",
+            "Width": 800,
+            "Height": 480,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "Background",
+                "Width": 160,
+                "Height": 480,
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "Box",
+                "Name": "title_background",
+                "Width": 160,
+                "Height": 25,
+                "Color": {
+                  "Red": 80,
+                  "Green": 119,
+                  "Blue": 140
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "screen_title",
+                "Width": 160,
+                "Height": 25,
+                "TextId": "__SingleUse_87BD",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 232,
+                  "Green": 246,
+                  "Blue": 251
+                }
+              },
+              {
+                "Type": "Line",
+                "Name": "crosshair_x",
+                "Width": 800,
+                "Height": 480,
+                "Color": {
+                  "Red": 255
+                },
+                "StartX": 160.0,
+                "StartY": 240.0,
+                "EndX": 800.0,
+                "EndY": 240.0,
+                "LineWidth": 2.0,
+                "LineEndingStyle": "Round"
+              },
+              {
+                "Type": "Line",
+                "Name": "crosshair_y",
+                "Width": 800,
+                "Height": 480,
+                "Color": {
+                  "Red": 255
+                },
+                "StartX": 480.0,
+                "EndX": 480.0,
+                "EndY": 480.0,
+                "LineWidth": 2.0,
+                "LineEndingStyle": "Round"
+              },
+              {
+                "Type": "Line",
+                "Name": "divisore_camera",
+                "Width": 800,
+                "Height": 480,
+                "StartX": 160.0,
+                "EndX": 160.0,
+                "EndY": 480.0,
+                "LineWidth": 1.0,
+                "LineEndingStyle": "Round"
+              },
+              {
+                "Type": "Line",
+                "Name": "divisore_titolo",
+                "Width": 800,
+                "Height": 480,
+                "StartY": 25.0,
+                "EndX": 160.0,
+                "EndY": 25.0,
+                "LineWidth": 1.0,
+                "LineEndingStyle": "Round"
+              },
+              {
+                "Type": "ButtonWithIcon",
+                "Name": "settings_button",
+                "X": 5,
+                "Y": 415,
+                "Width": 60,
+                "Height": 60,
+                "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_tiny_fill_pressed.png",
+                "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_tiny_fill_normal.png",
+                "IconPressed": "__generated\\icon_theme_images_action_settings_applications_50_50_E8F6FB.svg.png",
+                "IconReleased": "__generated\\icon_theme_images_action_settings_applications_50_50_E8F6FB.svg.png",
+                "IconX": 6,
+                "IconY": 6,
+                "IconHeight": 50,
+                "IconWidth": 50,
+                "Preset": "alternate_theme\\presets\\button\\icon\\round\\tiny_fill_normal.json"
+              }
+            ]
+          },
+          {
+            "Type": "ScrollableContainer",
+            "Name": "scrollableContainer1",
+            "Y": 35,
+            "Width": 160,
+            "Height": 375,
+            "HorizontalScrollEnabled": true,
+            "VerticalScrollEnabled": true,
+            "ScrollbarsVisibleOnPressed": true,
+            "ScrollbarsAlpha": 255,
+            "Components": [
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "main_page_data1",
+                "Y": -10,
+                "Width": 160,
+                "Height": 50,
+                "CustomContainerDefinitionName": "main_page_data"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "main_page_data1_1",
+                "Y": 40,
+                "Width": 160,
+                "Height": 50,
+                "CustomContainerDefinitionName": "main_page_data"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "main_page_data1_1_1",
+                "Y": 90,
+                "Width": 160,
+                "Height": 50,
+                "CustomContainerDefinitionName": "main_page_data"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "main_page_data1_2",
+                "Y": 140,
+                "Width": 160,
+                "Height": 50,
+                "CustomContainerDefinitionName": "main_page_data"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "main_page_data1_1_2",
+                "Y": 190,
+                "Width": 160,
+                "Height": 50,
+                "CustomContainerDefinitionName": "main_page_data"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "main_page_data1_1_1_1",
+                "Y": 240,
+                "Width": 160,
+                "Height": 50,
+                "CustomContainerDefinitionName": "main_page_data"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "main_page_data1_3",
+                "Y": 290,
+                "Width": 160,
+                "Height": 50,
+                "CustomContainerDefinitionName": "main_page_data"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "main_page_data1_1_3",
+                "Y": 340,
+                "Width": 160,
+                "Height": 50,
+                "CustomContainerDefinitionName": "main_page_data"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "main_page_data1_1_1_2",
+                "Y": 390,
+                "Width": 160,
+                "Height": 50,
+                "CustomContainerDefinitionName": "main_page_data"
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "settings_button"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Settings"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Settings",
+        "CanvasBufferSize": 12000,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 800,
+            "Height": 480,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 800,
+            "Height": 25,
+            "Color": {
+              "Red": 80,
+              "Green": 119,
+              "Blue": 140
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "screen_title_1",
+            "Width": 800,
+            "Height": 25,
+            "TextId": "__SingleUse_Z89E",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 232,
+              "Green": 246,
+              "Blue": 251
+            }
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "back_button",
+            "X": 5,
+            "Y": 415,
+            "Width": 60,
+            "Height": 60,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_tiny_fill_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_tiny_fill_normal.png",
+            "IconPressed": "__generated\\icon_theme_images_action_settings_applications_50_50_E8F6FB.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_navigation_arrow_back_ios_50_50_E8F6FB.svg.png",
+            "IconX": 6,
+            "IconY": 6,
+            "IconHeight": 50,
+            "IconWidth": 50,
+            "Preset": "alternate_theme\\presets\\button\\icon\\round\\tiny_fill_normal.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "screen_title_2",
+            "Width": 800,
+            "Height": 25,
+            "TextId": "__SingleUse_7E0N",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 232,
+              "Green": 246,
+              "Blue": 251
+            }
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "parameter_list_border",
+            "X": 10,
+            "Y": 35,
+            "Width": 485,
+            "Height": 375,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "BorderSize": 1
+          },
+          {
+            "Type": "ScrollableContainer",
+            "Name": "parameter_list",
+            "X": 10,
+            "Y": 35,
+            "Width": 485,
+            "Height": 370,
+            "HorizontalScrollEnabled": true,
+            "VerticalScrollEnabled": true,
+            "ScrollbarsVisibleOnPressed": true,
+            "ScrollbarsAlpha": 255,
+            "Components": [
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "parameter_setting_menu_item1_1",
+                "Width": 485,
+                "Height": 50,
+                "CustomContainerDefinitionName": "parameter_setting_menu_item"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "parameter_setting_menu_item1",
+                "Y": 50,
+                "Width": 485,
+                "Height": 50,
+                "CustomContainerDefinitionName": "parameter_setting_menu_item"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "parameter_setting_menu_item1_2",
+                "Y": 100,
+                "Width": 485,
+                "Height": 50,
+                "CustomContainerDefinitionName": "parameter_setting_menu_item"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "parameter_setting_menu_item1_2_1",
+                "Y": 150,
+                "Width": 485,
+                "Height": 50,
+                "CustomContainerDefinitionName": "parameter_setting_menu_item"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "parameter_setting_menu_item1_2_1_1",
+                "Y": 200,
+                "Width": 485,
+                "Height": 50,
+                "CustomContainerDefinitionName": "parameter_setting_menu_item"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "parameter_setting_menu_item1_1_1",
+                "Y": 250,
+                "Width": 485,
+                "Height": 50,
+                "CustomContainerDefinitionName": "parameter_setting_menu_item"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "parameter_setting_menu_item1_3",
+                "Y": 300,
+                "Width": 485,
+                "Height": 50,
+                "CustomContainerDefinitionName": "parameter_setting_menu_item"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "parameter_setting_menu_item1_2_2",
+                "Y": 350,
+                "Width": 485,
+                "Height": 50,
+                "CustomContainerDefinitionName": "parameter_setting_menu_item"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "parameter_setting_menu_item1_2_1_2",
+                "Y": 400,
+                "Width": 485,
+                "Height": 50,
+                "CustomContainerDefinitionName": "parameter_setting_menu_item"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "parameter_setting_menu_item1_2_1_1_1",
+                "Y": 450,
+                "Width": 485,
+                "Height": 50,
+                "CustomContainerDefinitionName": "parameter_setting_menu_item"
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "Keypad",
+            "Width": 800,
+            "Height": 480,
+            "Components": [
+              {
+                "Type": "BoxWithBorder",
+                "Name": "edit_outside_box",
+                "X": 505,
+                "Y": 35,
+                "Width": 285,
+                "Height": 375,
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "BorderSize": 1
+              },
+              {
+                "Type": "TextArea",
+                "Name": "current_parameter_being_edited",
+                "X": 510,
+                "Y": 40,
+                "Width": 275,
+                "Height": 20,
+                "TextId": "__SingleUse_U8Y5",
+                "TextRotation": "0"
+              },
+              {
+                "Type": "BoxWithBorder",
+                "Name": "value_box",
+                "X": 515,
+                "Y": 70,
+                "Width": 265,
+                "Height": 50,
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "BorderSize": 1
+              },
+              {
+                "Type": "TextArea",
+                "Name": "value_display",
+                "X": 525,
+                "Y": 85,
+                "Width": 245,
+                "Height": 20,
+                "TextId": "__SingleUse_G8DI",
+                "TextRotation": "0"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "keypad_2",
+                "X": 617,
+                "Y": 130,
+                "Width": 60,
+                "Height": 60,
+                "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_pressed.png",
+                "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_normal.png",
+                "TextId": "__SingleUse_ZIKJ",
+                "ReleasedColor": {
+                  "Red": 232,
+                  "Green": 246,
+                  "Blue": 251
+                },
+                "PressedColor": {
+                  "Red": 232,
+                  "Green": 246,
+                  "Blue": 251
+                },
+                "TextRotation": "0",
+                "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\tiny_fill_normal.json"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "keypad_1",
+                "X": 552,
+                "Y": 130,
+                "Width": 60,
+                "Height": 60,
+                "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_pressed.png",
+                "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_normal.png",
+                "TextId": "__SingleUse_NAJ4",
+                "ReleasedColor": {
+                  "Red": 232,
+                  "Green": 246,
+                  "Blue": 251
+                },
+                "PressedColor": {
+                  "Red": 232,
+                  "Green": 246,
+                  "Blue": 251
+                },
+                "TextRotation": "0",
+                "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\tiny_fill_normal.json"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "keypad_3",
+                "X": 682,
+                "Y": 130,
+                "Width": 60,
+                "Height": 60,
+                "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_pressed.png",
+                "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_normal.png",
+                "TextId": "__SingleUse_5B7U",
+                "ReleasedColor": {
+                  "Red": 232,
+                  "Green": 246,
+                  "Blue": 251
+                },
+                "PressedColor": {
+                  "Red": 232,
+                  "Green": 246,
+                  "Blue": 251
+                },
+                "TextRotation": "0",
+                "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\tiny_fill_normal.json"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "keypad_5",
+                "X": 617,
+                "Y": 200,
+                "Width": 60,
+                "Height": 60,
+                "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_pressed.png",
+                "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_normal.png",
+                "TextId": "__SingleUse_91NH",
+                "ReleasedColor": {
+                  "Red": 232,
+                  "Green": 246,
+                  "Blue": 251
+                },
+                "PressedColor": {
+                  "Red": 232,
+                  "Green": 246,
+                  "Blue": 251
+                },
+                "TextRotation": "0",
+                "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\tiny_fill_normal.json"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "keypad_4",
+                "X": 552,
+                "Y": 200,
+                "Width": 60,
+                "Height": 60,
+                "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_pressed.png",
+                "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_normal.png",
+                "TextId": "__SingleUse_46IG",
+                "ReleasedColor": {
+                  "Red": 232,
+                  "Green": 246,
+                  "Blue": 251
+                },
+                "PressedColor": {
+                  "Red": 232,
+                  "Green": 246,
+                  "Blue": 251
+                },
+                "TextRotation": "0",
+                "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\tiny_fill_normal.json"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "keypad_6",
+                "X": 682,
+                "Y": 200,
+                "Width": 60,
+                "Height": 60,
+                "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_pressed.png",
+                "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_normal.png",
+                "TextId": "__SingleUse_13FB",
+                "ReleasedColor": {
+                  "Red": 232,
+                  "Green": 246,
+                  "Blue": 251
+                },
+                "PressedColor": {
+                  "Red": 232,
+                  "Green": 246,
+                  "Blue": 251
+                },
+                "TextRotation": "0",
+                "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\tiny_fill_normal.json"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "keypad_8",
+                "X": 617,
+                "Y": 270,
+                "Width": 60,
+                "Height": 60,
+                "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_pressed.png",
+                "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_normal.png",
+                "TextId": "__SingleUse_WYTA",
+                "ReleasedColor": {
+                  "Red": 232,
+                  "Green": 246,
+                  "Blue": 251
+                },
+                "PressedColor": {
+                  "Red": 232,
+                  "Green": 246,
+                  "Blue": 251
+                },
+                "TextRotation": "0",
+                "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\tiny_fill_normal.json"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "keypad_7",
+                "X": 552,
+                "Y": 270,
+                "Width": 60,
+                "Height": 60,
+                "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_pressed.png",
+                "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_normal.png",
+                "TextId": "__SingleUse_LOTQ",
+                "ReleasedColor": {
+                  "Red": 232,
+                  "Green": 246,
+                  "Blue": 251
+                },
+                "PressedColor": {
+                  "Red": 232,
+                  "Green": 246,
+                  "Blue": 251
+                },
+                "TextRotation": "0",
+                "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\tiny_fill_normal.json"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "keypad_0",
+                "X": 617,
+                "Y": 340,
+                "Width": 60,
+                "Height": 60,
+                "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_pressed.png",
+                "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_normal.png",
+                "TextId": "__SingleUse_1DQH",
+                "ReleasedColor": {
+                  "Red": 232,
+                  "Green": 246,
+                  "Blue": 251
+                },
+                "PressedColor": {
+                  "Red": 232,
+                  "Green": 246,
+                  "Blue": 251
+                },
+                "TextRotation": "0",
+                "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\tiny_fill_normal.json"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "keypad_9",
+                "X": 682,
+                "Y": 270,
+                "Width": 60,
+                "Height": 60,
+                "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_pressed.png",
+                "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_normal.png",
+                "TextId": "__SingleUse_LIS5",
+                "ReleasedColor": {
+                  "Red": 232,
+                  "Green": 246,
+                  "Blue": 251
+                },
+                "PressedColor": {
+                  "Red": 232,
+                  "Green": 246,
+                  "Blue": 251
+                },
+                "TextRotation": "0",
+                "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\tiny_fill_normal.json"
+              },
+              {
+                "Type": "ButtonWithIcon",
+                "Name": "keypad_X",
+                "X": 552,
+                "Y": 340,
+                "Width": 60,
+                "Height": 60,
+                "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_pressed.png",
+                "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_normal.png",
+                "IconPressed": "__generated\\icon_theme_images_navigation_cancel_40_40_E8F6FB.svg.png",
+                "IconReleased": "__generated\\icon_theme_images_navigation_cancel_40_40_E8F6FB.svg.png",
+                "IconX": 11,
+                "IconY": 11,
+                "IconHeight": 40,
+                "IconWidth": 40,
+                "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\tiny_fill_normal.json"
+              },
+              {
+                "Type": "ButtonWithIcon",
+                "Name": "keypad_OK",
+                "X": 682,
+                "Y": 340,
+                "Width": 60,
+                "Height": 60,
+                "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_pressed.png",
+                "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_normal.png",
+                "IconPressed": "__generated\\icon_theme_images_action_done_40_40_E8F6FB.svg.png",
+                "IconReleased": "__generated\\icon_theme_images_action_done_40_40_E8F6FB.svg.png",
+                "IconX": 10,
+                "IconY": 10,
+                "IconHeight": 40,
+                "IconWidth": 40,
+                "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\tiny_fill_normal.json"
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "back_button"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "Main"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [
+      {
+        "Name": "parameter_setting_menu_item",
+        "Width": 485,
+        "Height": 50,
+        "Components": [
+          {
+            "Type": "TextArea",
+            "Name": "label",
+            "X": 10,
+            "Y": 14,
+            "Width": 55,
+            "Height": 20,
+            "TextId": "__SingleUse_TWEE",
+            "TextRotation": "0"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "value",
+            "X": 270,
+            "Y": 14,
+            "Width": 55,
+            "Height": 20,
+            "TextId": "__SingleUse_S9RL",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "edit_button",
+            "X": 441,
+            "Y": 7,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_micro_fill_normal.png",
+            "IconPressed": "__generated\\icon_theme_images_editor_mode_edit_25_25_E8F6FB.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_editor_mode_edit_25_25_E8F6FB.svg.png",
+            "IconX": 6,
+            "IconY": 5,
+            "IconHeight": 25,
+            "IconWidth": 25,
+            "Preset": "alternate_theme\\presets\\button\\icon\\round\\micro_fill_normal.json"
+          },
+          {
+            "Type": "Line",
+            "Name": "divider",
+            "Y": -1,
+            "Width": 485,
+            "Height": 50,
+            "Color": {
+              "Red": 209,
+              "Green": 209,
+              "Blue": 209
+            },
+            "StartX": 260.0,
+            "EndX": 260.0,
+            "EndY": 50.0,
+            "LineWidth": 2.0,
+            "LineEndingStyle": "Round"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "main_page_data",
+        "Width": 160,
+        "Height": 50,
+        "Components": [
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 6,
+            "Y": 25,
+            "Width": 88,
+            "Height": 20,
+            "TextId": "__SingleUse_10G2",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1",
+            "X": 6,
+            "Y": 5,
+            "Width": 88,
+            "Height": 20,
+            "TextId": "__SingleUse_R14J",
+            "TextRotation": "0",
+            "AutoSize": true
+          }
+        ],
+        "Interactions": []
+      }
+    ],
+    "Name": "MyApplication",
+    "Resolution": {
+      "Width": 800,
+      "Height": 480
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "Startup",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp",
+      "24": "LCD24bpp",
+      "8": "LCD8bpp_ABGR2222"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 800,
+        "Height": 480
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape",
+    "Family": "STM32H7",
+    "SubFamily": "STM32H723/733",
+    "Toolchain": "STM32CubeIDE",
+    "Platform": "m7",
+    "ProjectFile": "../Master.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": [],
+    "AdditionalFeatures": [
+      "CWRVector",
+      "VectorFonts"
+    ]
+  },
+  "Version": "4.25.0"
+}

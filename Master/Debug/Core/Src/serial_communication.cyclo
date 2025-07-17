@@ -1,0 +1,8 @@
+../Core/Src/serial_communication.c:20:6:serial_communication_variable_init	1
+../Core/Src/serial_communication.c:32:10:prepare_ACK_packet	1
+../Core/Src/serial_communication.c:46:10:prepare_NACK_packet	1
+../Core/Src/serial_communication.c:60:10:prepare_START_packet	1
+../Core/Src/serial_communication.c:74:10:prepare_STOP_packet	1
+../Core/Src/serial_communication.c:88:10:prepare_WRITE_packet	1
+../Core/Src/serial_communication.c:111:10:prepare_READ_packet	1
+../Core/Src/serial_communication.c:127:6:read_data_from_WRITE_command	1
