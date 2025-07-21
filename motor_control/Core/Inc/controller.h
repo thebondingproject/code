@@ -15,20 +15,23 @@
  *  Defines
  **********************************************************************************************/
 /** @todo Are we sure these are defines? */
-/** Sets the bandwidth of the speed controller  */
-#define ALPHA 0.02f //0.38587 bandwidth α = T/(T+tau) (T=sample time, tau = filter pole) T=0.000639, tau=0.001017
 /** Number of impulses per encoder rotation */
-
 // 0.02 Z, 0.03 theta  0.05 XY
 #define PPR_ENCODER 1024.0f
 
 #if MOTOR_AXIS == 0 || MOTOR_AXIS == 1
+	/** Sets the bandwidth of the speed controller  */
+	#define ALPHA 0.05f //0.38587 bandwidth α = T/(T+tau) (T=sample time, tau = filter pole) T=0.000639, tau=0.001017
 	#define K_SPRING 0;
 #endif
 #if MOTOR_AXIS == 2
+	/** Sets the bandwidth of the speed controller  */
+	#define ALPHA 0.02f //0.38587 bandwidth α = T/(T+tau) (T=sample time, tau = filter pole) T=0.000639, tau=0.001017
 	#define K_SPRING 0;
 #endif
 #if MOTOR_AXIS == 3
+	/** Sets the bandwidth of the speed controller  */
+	#define ALPHA 0.03f //0.38587 bandwidth α = T/(T+tau) (T=sample time, tau = filter pole) T=0.000639, tau=0.001017
 	#define K_SPRING 0;
 #endif
 

@@ -106,10 +106,6 @@ typedef union {
 #define COMMAND_WRITE       0x05
 /** Data READ command code */
 #define COMMAND_READ        0x06
-/** Position control mode  */
-#define COMMAND_POS_MODE    0x07
-/** Speed    control mode  */
-#define COMMAND_SPD_MODE    0x08
 
 /** Virtual memory address for POSITION*/
 #define VIRTUAL_MEM_POSITION      0x00
@@ -121,10 +117,20 @@ typedef union {
 #define VIRTUAL_MEM_POSITION_MEAS 0x03
 /** Virtual memory address for Measured SPEED*/
 #define VIRTUAL_MEM_SPEED_MEAS    0x04
+/** Virtual memory address for MODE */
+#define VIRTUAL_MEM_MODE          0x05
+
 /** Maximum message size (32 bytes) */
-#define MAX_COMM_BUFFER_SIZE 32
+#define MAX_COMM_BUFFER_SIZE 7
 /** Timeout for the HAL I2C transmit function */
-#define MAX_TRANSMISSION_TIME 10
+#define MAX_TRANSMISSION_TIME 100
+
+/** Slave POSITION control mode */
+#define POS_MODE 0
+/** Slave SPEED    control mode */
+#define SPD_MODE 1
+/** Slave CURRENT  control mode */
+#define CUR_MODE 2
 
 /**********************************************************************************************
  *  Global variables

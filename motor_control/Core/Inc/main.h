@@ -56,6 +56,8 @@ void Error_Handler(void);
 #define FAULTB_GPIO_Port GPIOC
 #define FAULTA_Pin GPIO_PIN_3
 #define FAULTA_GPIO_Port GPIOC
+#define DEBUG_OUT_Pin GPIO_PIN_13
+#define DEBUG_OUT_GPIO_Port GPIOB
 #define TMS_Pin GPIO_PIN_13
 #define TMS_GPIO_Port GPIOA
 #define TCK_Pin GPIO_PIN_14
@@ -97,17 +99,6 @@ void Error_Handler(void);
 #if MOTOR_AXIS == 3
 #define SLAVE_ADDRESS ADDRESS_MOTOR_T
 #endif
-
-/** Joystick position control mode */
-#define POS_MODE 0
-
-/** Debug only */
-#define SPD_MODE 3
-
-/** Joystick speed control mode */
-#define VEL_MODE 1
-
-#define FULL_MODE 2
 
 /* USER CODE END Private defines */
 

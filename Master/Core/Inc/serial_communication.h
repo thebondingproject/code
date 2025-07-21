@@ -121,7 +121,7 @@ typedef union {
 #define VIRTUAL_MEM_MODE          0x05
 
 /** Maximum message size (32 bytes) */
-#define MAX_COMM_BUFFER_SIZE 32
+#define MAX_COMM_BUFFER_SIZE 7
 /** Timeout for the HAL I2C transmit function */
 #define MAX_TRANSMISSION_TIME 100
 
