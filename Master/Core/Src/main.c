@@ -202,14 +202,14 @@ int main(void)
 	solenoid_tear_2_status = 0;
 	solenoid_tear_clamp_status = 0;
 	solenoid_tear_lock_status = 0;
-	control_mode = 1;
+	control_mode = 0;
 	bond_power_now = 0;
 	bond_power_before = 0;
 	search_height_adj_1 = 0;
 	search_height_adj_2 = 0;
 	measured_temperature_gauge = 0;
 	debug_head_touched = 0;
-	fine_adjustment = 0;
+	fine_adjustment = 1;
 
 	if (HAL_TIM_Base_Start_IT(&htim2) != HAL_OK)
 	{
@@ -235,23 +235,38 @@ int main(void)
 	//Reset position at startup
 	write_uint32_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_MODE, POS_MODE);
 	HAL_Delay(10);
-	write_float_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_POSITION, -0.5);
+	write_float_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_POSITION, 0);
+	HAL_Delay(10);
 
 	write_uint32_to_slave(ADDRESS_MOTOR_X, VIRTUAL_MEM_MODE, SPD_MODE);
+	HAL_Delay(10);
 	write_float_to_slave(ADDRESS_MOTOR_X, VIRTUAL_MEM_SPEED, 0);
+	HAL_Delay(10);
 
 	write_uint32_to_slave(ADDRESS_MOTOR_Y, VIRTUAL_MEM_MODE, SPD_MODE);
+	HAL_Delay(10);
 	write_float_to_slave(ADDRESS_MOTOR_Y, VIRTUAL_MEM_SPEED, 0);
+	HAL_Delay(10);
 
-	write_uint32_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_MODE, SPD_MODE);
+	write_uint32_to_slave(ADDRESS_MOTOR_T, VIRTUAL_MEM_MODE, SPD_MODE);
+	HAL_Delay(10);
+	write_float_to_slave(ADDRESS_MOTOR_T, VIRTUAL_MEM_SPEED, 0);
+	HAL_Delay(10);
 
 	while (1)
 	{
-		prepare_READ_packet(tx_buffer, VIRTUAL_MEM_POSITION_MEAS);
-		HAL_I2C_Master_Transmit(&hi2c1, ADDRESS_MOTOR_Z, tx_buffer, MAX_COMM_BUFFER_SIZE, MAX_TRANSMISSION_TIME);
-		HAL_I2C_Master_Receive_IT(&hi2c1, ADDRESS_MOTOR_Z, rx_buffer, MAX_COMM_BUFFER_SIZE);
-
-		HAL_Delay(10);
+//		write_uint32_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_MODE, POS_MODE);
+//		HAL_Delay(10);
+//		write_float_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_POSITION, 0);
+//		HAL_Delay(2500);
+//		write_uint32_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_MODE, POS_MODE);
+//		HAL_Delay(10);
+//		write_float_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_POSITION, -0.5);
+//		HAL_Delay(2500);
+//		write_uint32_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_MODE, SPD_MODE);
+//		HAL_Delay(10);
+//		write_float_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_SPEED, -0.5);
+//		HAL_Delay(5000);
 
 		/** Transmit the value of the bond power to the digital trimmer only when it changes */
 		/** @todo TO REMOVE, this is only here for debug */
@@ -281,9 +296,9 @@ int main(void)
 		//				HAL_I2C_Master_Transmit_IT(&hi2c1, ADDRESS_MOTOR_Z, tx_buffer, MAX_COMM_BUFFER_SIZE);
 		//				HAL_Delay(6000);
 
-		//		//Keep the head raised
-		//		debug_head_touched = HAL_GPIO_ReadPin(PLATFORM_TOUCH_GPIO_Port, PLATFORM_TOUCH_Pin);
-		//		HAL_Delay(100);
+		//Keep the head raised
+		debug_head_touched = HAL_GPIO_ReadPin(PLATFORM_TOUCH_GPIO_Port, PLATFORM_TOUCH_Pin);
+//		HAL_Delay(100);
 		//
 
 
@@ -342,7 +357,7 @@ int main(void)
 		HAL_Delay(100);
 #endif
 
-
+#if 0
 		if(HAL_GPIO_ReadPin(BUTTON_START_BOND_GPIO_Port, BUTTON_START_BOND_Pin) == GPIO_PIN_RESET && FSM_currentState != FSM_nextState)
 		{
 			FSM_currentState = FSM_nextState;
@@ -364,20 +379,25 @@ int main(void)
 			HAL_GPIO_WritePin(SOLENOID_LOCK_GPIO_Port, SOLENOID_LOCK_Pin, GPIO_PIN_SET);
 			HAL_Delay(200);
 			write_float_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_POSITION, search_height_1);
-			HAL_Delay(4000);
-			//prepare_READ_packet(tx_buffer, VIRTUAL_MEM_POSITION_MEAS);
-			//HAL_I2C_Master_Transmit(&hi2c1, ADDRESS_MOTOR_Z, tx_buffer, MAX_COMM_BUFFER_SIZE, MAX_TRANSMISSION_TIME);
-			//HAL_I2C_Master_Receive_IT(&hi2c1, ADDRESS_MOTOR_Z, rx_buffer, MAX_COMM_BUFFER_SIZE);
+			HAL_Delay(5000);
+//			prepare_READ_packet(tx_buffer, VIRTUAL_MEM_POSITION_MEAS);
+//			HAL_I2C_Master_Transmit(&hi2c1, ADDRESS_MOTOR_Z, tx_buffer, MAX_COMM_BUFFER_SIZE, MAX_TRANSMISSION_TIME);
+//			HAL_I2C_Master_Receive_IT(&hi2c1, ADDRESS_MOTOR_Z, rx_buffer, MAX_COMM_BUFFER_SIZE);
+//			HAL_Delay(100);
+//			// Se non va sostituire con delay
 
-			// Se non va sostituire con delay
-
-			//if(read_position == search_height_1)
+			/** @todo mettere una tolleranza seria anziché 0.01, o perlomeno metterla in un define */
+			//if(fabs(read_position-search_height_1)<0.01)
 			FSM_nextState = START_DESCEND1;
 			break;
 		case START_DESCEND1:
 			HAL_GPIO_WritePin(SOLENOID_LOCK_GPIO_Port, SOLENOID_LOCK_Pin, GPIO_PIN_RESET);
 			HAL_Delay(200);
-			write_float_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_POSITION, -1);
+			//write_float_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_POSITION, -1);
+			write_uint32_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_MODE, SPD_MODE);
+			HAL_Delay(10);
+			write_float_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_SPEED, 1);
+			HAL_Delay(10);
 			FSM_currentState = BOND1;
 			FSM_nextState = BOND1;
 			break;
@@ -394,7 +414,10 @@ int main(void)
 				// Open clamp solenoid
 				HAL_GPIO_WritePin(SOLENOID_CLAMP_GPIO_Port, SOLENOID_CLAMP_Pin, GPIO_PIN_SET);
 				//Go to loop height
+				write_uint32_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_MODE, POS_MODE);
+				HAL_Delay(10);
 				write_float_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_POSITION, (read_position - further_descent) + loop_height);
+				HAL_Delay(10);
 				FSM_nextState = SECOND_SEARCH_HEIGHT;
 			}
 			head_touched = false;
@@ -415,7 +438,11 @@ int main(void)
 		case START_DESCEND2:
 			HAL_GPIO_WritePin(SOLENOID_LOCK_GPIO_Port, SOLENOID_LOCK_Pin, GPIO_PIN_RESET);
 			HAL_Delay(200);
-			write_float_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_POSITION, -1);
+			//write_float_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_POSITION, -1);
+			write_uint32_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_MODE, SPD_MODE);
+			HAL_Delay(10);
+			write_float_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_SPEED, 0.1);
+			HAL_Delay(10);
 			FSM_currentState = BOND2;
 			FSM_nextState = BOND2;
 			break;
@@ -426,14 +453,12 @@ int main(void)
 			HAL_I2C_Master_Transmit(&hi2c1, ADDRESS_MOTOR_Z, tx_buffer, MAX_COMM_BUFFER_SIZE, MAX_TRANSMISSION_TIME);
 			HAL_I2C_Master_Receive_IT(&hi2c1, ADDRESS_MOTOR_Z, rx_buffer, MAX_COMM_BUFFER_SIZE);
 			if(head_touched){
+				write_uint32_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_MODE, POS_MODE);
 				write_float_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_POSITION, read_position - further_descent);
 				HAL_Delay(1000);
 				perform_bond(bond_time_2);
-
-
 				HAL_GPIO_WritePin(SOLENOID_TEAR_2_GPIO_Port, SOLENOID_TEAR_2_Pin, GPIO_PIN_SET);
 				HAL_GPIO_WritePin(SOLENOID_TEAR_1_GPIO_Port, SOLENOID_TEAR_1_Pin, GPIO_PIN_SET);
-
 				HAL_Delay(1000);
 
 				// Close clamp solenoid
@@ -461,11 +486,12 @@ int main(void)
 			break;
 
 		}
+#endif
 
 		// Execute this code
 
 
-#if 0
+#if 1
 		if(HAL_GPIO_ReadPin(BUTTON_START_BOND_GPIO_Port, BUTTON_START_BOND_Pin) == GPIO_PIN_RESET)
 		{
 
@@ -484,17 +510,21 @@ int main(void)
 			// Wait for the button to be pressed and released
 			//wait_for_button_press();
 
+#if 1
 			stage++; //For debug; TODO: remove
 			// Enter into jog mode (XY movement with joystick)
 			enter_jog_mode();
 			// Wait for the user to release the button
 			wait_for_button_release();
+#else
+			wait_for_button_press();
+#endif
 
 			stage++; //For debug; TODO: remove
 			//Start descending until touch with substrate
 			head_touched = false;
 			write_float_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_POSITION, -1);
-			while(!head_touched){};
+			while(!head_touched){__NOP();};
 
 			stage++; //For debug; TODO: remove
 			//Lower the head a bit more
@@ -502,7 +532,7 @@ int main(void)
 			prepare_READ_packet(tx_buffer, VIRTUAL_MEM_POSITION_MEAS);
 			HAL_I2C_Master_Transmit(&hi2c1, ADDRESS_MOTOR_Z, tx_buffer, MAX_COMM_BUFFER_SIZE, MAX_TRANSMISSION_TIME);
 			HAL_I2C_Master_Receive_IT(&hi2c1, ADDRESS_MOTOR_Z, rx_buffer, MAX_COMM_BUFFER_SIZE);
-			while(!data_ready){};
+			while(!data_ready){__NOP();};
 			write_float_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_POSITION, read_position - further_descent);
 
 			stage++; //For debug; TODO: remove
@@ -515,28 +545,36 @@ int main(void)
 			//Go to loop height
 			write_float_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_POSITION, (read_position - further_descent) + loop_height);
 
+#if 1
 			stage++; //For debug; TODO: remove
 			// Enter into jog mode (XY movement with joystick)
 			enter_jog_mode();
 			// Wait for the user to release the button
 			wait_for_button_release();
-
+#else
+			wait_for_button_press();
+#endif
 			//Go to search height 2
 			write_float_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_POSITION, search_height_2);
 
 			// Wait for the button to be pressed and released
 			//wait_for_button_press();
 
+#if 1
 			stage++; //For debug; TODO: remove
 			// Enter into jog mode (XY movement with joystick)
 			enter_jog_mode();
 			// Wait for the user to release the button
 			wait_for_button_release();
+#else
+			wait_for_button_press();
+#endif
+
 
 			//Start descending until touch with substrate
 			head_touched = false;
 			write_float_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_POSITION, -1);
-			while(!head_touched){};
+			while(!head_touched){__NOP();};
 
 			stage++; //For debug; TODO: remove
 			//Lower the head a bit more
@@ -544,7 +582,7 @@ int main(void)
 			prepare_READ_packet(tx_buffer, VIRTUAL_MEM_POSITION_MEAS);
 			HAL_I2C_Master_Transmit(&hi2c1, ADDRESS_MOTOR_Z, tx_buffer, MAX_COMM_BUFFER_SIZE, MAX_TRANSMISSION_TIME);
 			HAL_I2C_Master_Receive_IT(&hi2c1, ADDRESS_MOTOR_Z, rx_buffer, MAX_COMM_BUFFER_SIZE);
-			while(!data_ready){};
+			while(!data_ready){__NOP();};
 			write_float_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_POSITION, read_position - further_descent);
 
 			stage++; //For debug; TODO: remove
@@ -574,7 +612,7 @@ int main(void)
 		}
 #endif
 
-#if 1
+#if 0
 		if(solenoid_tear_1_status)
 			HAL_GPIO_WritePin(SOLENOID_TEAR_1_GPIO_Port, SOLENOID_TEAR_1_Pin, GPIO_PIN_SET);
 		else
@@ -1598,17 +1636,17 @@ void measure_joystick_and_send_to_slave(void)
 	{
 	case 0:
 		write_float_to_slave(ADDRESS_MOTOR_X, VIRTUAL_MEM_SPEED, speed_joystickX / divider);
+		HAL_Delay(10);
 		write_float_to_slave(ADDRESS_MOTOR_Y, VIRTUAL_MEM_SPEED, speed_joystickY / divider);
+		HAL_Delay(10);
 		break;
 	case 1:
-
-		HAL_Delay(10);
 		write_float_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_SPEED, speed_joystickZ / divider);
+		HAL_Delay(10);
 		break;
 	case 2:
-		write_uint32_to_slave(ADDRESS_MOTOR_T, VIRTUAL_MEM_MODE, POS_MODE);
+		write_float_to_slave(ADDRESS_MOTOR_T, VIRTUAL_MEM_SPEED, speed_joystickT / divider);
 		HAL_Delay(10);
-		write_float_to_slave(ADDRESS_MOTOR_T, VIRTUAL_MEM_POSITION, speed_joystickT / divider);
 		break;
 	}
 }
@@ -1616,12 +1654,24 @@ void measure_joystick_and_send_to_slave(void)
 // Enter into jog mode (XY movement with joystick)
 void enter_jog_mode(void)
 {
-	write_uint32_to_slave(ADDRESS_MOTOR_X, VIRTUAL_MEM_MODE, SPD_MODE);
-	write_uint32_to_slave(ADDRESS_MOTOR_Y, VIRTUAL_MEM_MODE, SPD_MODE);
-	while (HAL_GPIO_ReadPin(BUTTON_START_BOND_GPIO_Port, BUTTON_START_BOND_Pin) == GPIO_PIN_RESET)
+//	write_uint32_to_slave(ADDRESS_MOTOR_X, VIRTUAL_MEM_MODE, SPD_MODE);
+//	write_uint32_to_slave(ADDRESS_MOTOR_Y, VIRTUAL_MEM_MODE, SPD_MODE);
+	while (HAL_GPIO_ReadPin(BUTTON_START_BOND_GPIO_Port, BUTTON_START_BOND_Pin) == GPIO_PIN_SET)
 	{
+		HAL_ADC_Start(&hadc1);
+		HAL_ADC_PollForConversion(&hadc1, 1000);
+		ADC_raw[0] = HAL_ADC_GetValue(&hadc1);
+
+		HAL_ADC_Start(&hadc3);
+		HAL_ADC_PollForConversion(&hadc3, 1000);
+		ADC_raw[1] = HAL_ADC_GetValue(&hadc3);
+
+		//Enable XY jog mode
 		measure_joystick_and_send_to_slave();
-		HAL_Delay(100);
+		//HAL_Delay(100)
+
+		//measure_joystick_and_send_to_slave();
+		//HAL_Delay(100);
 	}
 	//write_uint32_to_slave(ADDRESS_MOTOR_X, VIRTUAL_MEM_MODE, POS_MODE);
 	//write_uint32_to_slave(ADDRESS_MOTOR_Y, VIRTUAL_MEM_MODE, POS_MODE);
@@ -1804,14 +1854,14 @@ void perform_bond(uint32_t bond_time)
 
 void wait_for_button_release(void)
 {
-	while(HAL_GPIO_ReadPin(BUTTON_START_BOND_GPIO_Port, BUTTON_START_BOND_Pin) == GPIO_PIN_SET)
+	while(HAL_GPIO_ReadPin(BUTTON_START_BOND_GPIO_Port, BUTTON_START_BOND_Pin) == GPIO_PIN_RESET)
 		HAL_Delay(100);
 }
 
 void wait_for_button_press(void)
 {
 	// Wait for button press
-	while(HAL_GPIO_ReadPin(BUTTON_START_BOND_GPIO_Port, BUTTON_START_BOND_Pin) == GPIO_PIN_RESET)
+	while(HAL_GPIO_ReadPin(BUTTON_START_BOND_GPIO_Port, BUTTON_START_BOND_Pin) == GPIO_PIN_SET)
 		HAL_Delay(100);
 	// Wait for the user to release the button
 	wait_for_button_release();

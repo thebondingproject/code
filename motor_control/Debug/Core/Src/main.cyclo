@@ -6,7 +6,7 @@
 ../Core/Src/main.c:481:13:MX_TIM2_Init	3
 ../Core/Src/main.c:530:13:MX_GPIO_Init	1
 ../Core/Src/main.c:608:5:execute_read_command	3
-../Core/Src/main.c:642:5:execute_write_command	7
+../Core/Src/main.c:642:5:execute_write_command	6
 ../Core/Src/main.c:692:6:HAL_I2C_SlaveRxCpltCallback	5
 ../Core/Src/main.c:726:7:read_position_from_encoder	1
 ../Core/Src/main.c:742:6:HAL_GPIO_EXTI_Callback	7
@@ -15,5 +15,5 @@
 ../Core/Src/main.c:937:6:HAL_I2C_AddrCallback	3
 ../Core/Src/main.c:954:6:HAL_I2C_SlaveTxCpltCallback	1
 ../Core/Src/main.c:959:6:HAL_I2C_ErrorCallback	1
-../Core/Src/main.c:965:9:is_switch_pressed_debounced	4
-../Core/Src/main.c:983:6:Error_Handler	1
+../Core/Src/main.c:971:9:is_switch_pressed_debounced	4
+../Core/Src/main.c:989:6:Error_Handler	1

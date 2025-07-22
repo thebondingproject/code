@@ -15,5 +15,5 @@
 ../Core/Src/main.c:937:6:HAL_I2C_AddrCallback	16	static
 ../Core/Src/main.c:954:6:HAL_I2C_SlaveTxCpltCallback	16	static
 ../Core/Src/main.c:959:6:HAL_I2C_ErrorCallback	16	static
-../Core/Src/main.c:965:9:is_switch_pressed_debounced	32	static
-../Core/Src/main.c:983:6:Error_Handler	8	static,ignoring_inline_asm
+../Core/Src/main.c:971:9:is_switch_pressed_debounced	32	static
+../Core/Src/main.c:989:6:Error_Handler	8	static,ignoring_inline_asm
