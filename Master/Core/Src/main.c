@@ -65,7 +65,7 @@ TIM_HandleTypeDef htim3;
 /* USER CODE BEGIN PV */
 /** Bonding parameters */
 float search_height_1 = -0.5, search_height_2 = -0.5;
-float further_descent = 0.01;
+float further_descent = 0.02;
 float loop_height = 0.5;
 uint8_t bond_power = 50;
 uint32_t bond_time_1 = 100, bond_time_2 = 100;
@@ -535,12 +535,15 @@ int main(void)
 			while(!data_ready){__NOP();};
 			write_float_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_POSITION, read_position - further_descent);
 
-			stage++; //For debug; TODO: remove
-			//Perform the bond
-			perform_bond(bond_time_1);
-
 			// Open clamp solenoid
 			HAL_GPIO_WritePin(SOLENOID_CLAMP_GPIO_Port, SOLENOID_CLAMP_Pin, GPIO_PIN_SET);
+
+
+			stage++; //For debug; TODO: remove
+			HAL_Delay(2500);
+			//Perform the bond
+			perform_bond(bond_time_1);
+			HAL_Delay(1000);
 
 			//Go to loop height
 			write_float_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_POSITION, (read_position - further_descent) + loop_height);
@@ -586,6 +589,7 @@ int main(void)
 			write_float_to_slave(ADDRESS_MOTOR_Z, VIRTUAL_MEM_POSITION, read_position - further_descent);
 
 			stage++; //For debug; TODO: remove
+			HAL_Delay(2500);
 			//Perform the bond
 			perform_bond(bond_time_2);
 			HAL_GPIO_WritePin(SOLENOID_TEAR_2_GPIO_Port, SOLENOID_TEAR_2_Pin, GPIO_PIN_SET);
@@ -612,7 +616,7 @@ int main(void)
 		}
 #endif
 
-#if 0
+#if 1
 		if(solenoid_tear_1_status)
 			HAL_GPIO_WritePin(SOLENOID_TEAR_1_GPIO_Port, SOLENOID_TEAR_1_Pin, GPIO_PIN_SET);
 		else
@@ -1678,7 +1682,8 @@ void enter_jog_mode(void)
 }
 
 /** @todo: move this stuff some other place */
-int32_t setpoint = 322042;	// 50 °C
+//int32_t setpoint = 322042;	// 50 °C
+int32_t setpoint = 383659;	//  100°C
 const int32_t Kp = 90, Ki = 0, Sample_time = 1;	// PI parameters
 
 #define ADC_MIN 288      // Minimum ADC value allowed
